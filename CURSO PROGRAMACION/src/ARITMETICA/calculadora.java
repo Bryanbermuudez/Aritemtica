@@ -19,9 +19,8 @@ public class calculadora
 					Lista.add("5. NUMERO MAYOR");
 					Lista.add("6. PROMEDIO DE 5 NUMEROS");
 					Lista.add("7. RAIZ CUADRADA");
-					Lista.add("8. FORMULA CUADRATICA");
 						
-				System.out.println(Lista + "\n" + "Ingrese la opcion que desea seguido de la tecla ENTER :");
+				System.out.println(Lista + "\n" + "Ingrese la opcion que desea, seguido de la tecla ENTER :");
 				int x = Integer.parseInt(br.readLine());
 			
 				switch (x)
@@ -104,6 +103,20 @@ public class calculadora
 							float prod5 = Float.parseFloat(br.readLine());
 							float proceso = (prod1 + prod2 + prod3 + prod4 + prod5)/5;
 							System.out.println("El promedio es igual a : " + proceso);
+						}break;
+						case 7:
+						{
+							System.out.println("Ingrese las notas a promediar");
+							float raiz1 = Float.parseFloat(br.readLine());
+							if (raiz1 >= 0)
+							{
+								float resultado = (float) Math.sqrt(raiz1);
+								System.out.println("La raiz cuadradad es : " + resultado);
+							}
+							else 
+							{
+								System.out.println("Ingrese un valor NO negativo");
+							}
 						}break;
 					}
 			}
