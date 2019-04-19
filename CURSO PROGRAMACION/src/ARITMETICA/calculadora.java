@@ -106,7 +106,7 @@ public class calculadora
 						}break;
 						case 7:
 						{
-							System.out.println("Ingrese las notas a promediar");
+							System.out.println("Ingrese el valor a calcular");
 							float raiz1 = Float.parseFloat(br.readLine());
 							if (raiz1 >= 0)
 							{
