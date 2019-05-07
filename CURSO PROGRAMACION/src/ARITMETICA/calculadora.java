@@ -117,7 +117,7 @@ public class calculadora
 							{
 								System.out.println("Ingrese un valor NO negativo");
 							}
-						}break;
+						o}break;
 					}
 			}
 		catch (IOException e) 
