@@ -11,7 +11,7 @@ public class CLASES {
 		try 
 		{
 			
-			System.out.println("Ingrese la opcion a escoger : \n 1. Combustible \n 2. Billetes \n 3. Conversor de tiempo \n 4. Conversor de edad");
+			System.out.println("Ingrese la opcion a escoger : \n 1. Combustible \n 2. Billetes \n 3. Conversor de tiempo \n 4. Conversor de edad \n 5. Test 1 \n 6. Bhaskara formula \n 7. Intervalo");
 			int opcion = Integer.parseInt(br.readLine());
 			switch(opcion)
 			{
@@ -53,7 +53,7 @@ public class CLASES {
 				}
 				case 4 :
 				{
-					//Edad en dias
+					//EDAD EN DIAS
 					System.out.println("Ingrese su edad, en dias");
 					int edad_dias = Integer.parseInt(br.readLine());
 					int año = edad_dias / 365;
@@ -62,6 +62,87 @@ public class CLASES {
 					System.out.println(año+" Año(s) \n" + mes + " Mes(es) \n" + dias +" Dia(s)");
 					
 				}
+				case 5 : 
+				{
+					//PRUEBA DE SELECCION 1 
+					System.out.println("Ingrese los valores separadospor espacios");
+					String valores = br.readLine();
+					String [] parts = valores.split(" ");
+						int dato1 = Integer.parseInt(parts[0]) ;
+						int dato2 = Integer.parseInt(parts[1]) ;
+						int dato3 = Integer.parseInt(parts[2]) ;
+						int dato4 = Integer.parseInt(parts[3]) ;
+					int sum1 = dato1 + dato2 ;
+					int sum2 = dato3 + dato4 ; 	
+					if (dato2 > dato3 && dato4 > dato1 && sum2>sum1 && dato3 > 0 && dato4>0 && (dato1%2 == 0)  )
+					{
+						System.out.println("Valores aceitos");
+					}
+					else
+					{
+						System.out.println("Valores nao aceitos");
+					}
+				}
+				case 6 : 
+				{
+					//BHASKARA´S FORMULA
+					System.out.println("Ingrese lo valores a calcular :");
+					String datosbhas = br.readLine();
+					String [] parts1 = datosbhas.split(" ");
+						double A = Double.parseDouble(parts1[0]);
+						double B = Double.parseDouble(parts1[1]);
+						double C = Double.parseDouble(parts1[2]);
+					double raiz = ((B*B) - (4*A*C));
+					if (A != 0 && raiz >= 0)
+					{
+						float opra = (float )Math.sqrt(raiz);
+						float resultado1 = (float) ((float) (-B + opra)/(2*A)) ;
+						float resultado2 = (float) ((float) (-B - opra)/(2*A)) ;
+						
+						System.out.println("R1 = " + resultado1 + "\nR2 = " + resultado2);
+					}
+					else
+					{
+						System.out.println("Impossivel calcular");
+					}	
+				}
+				case 7 :
+				{
+					System.out.println("Ingrese el numero correspondiente");
+					float rang = Float.parseFloat(br.readLine());
+					if(0.0 <= rang && rang<=25.0 )
+					{
+						System.out.println("Intervalo (0,25)");
+					}
+					else
+					{
+						//INTERVALO DE NUMEROS
+						if(25.0 < rang && rang<=50.0 )
+						{
+							System.out.println("Intervalo (25,50)");
+						}
+						else
+						{
+							if(50.0 < rang && rang<=75.0 )
+							{
+								System.out.println("Intervalo (50,75)");
+							}
+							else
+							{
+								if(75.0 < rang && rang<= 100.0 )
+								{
+									System.out.println("Intervalo (75,100)");
+								}
+								else
+								{
+									System.out.println("Intervalo invalido");
+								}
+							}
+						}
+						
+					}
+				}
+				case 8 :
 			}
 			
 		}
