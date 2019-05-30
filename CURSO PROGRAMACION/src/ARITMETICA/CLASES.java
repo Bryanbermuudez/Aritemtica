@@ -11,7 +11,7 @@ public class CLASES {
 		try 
 		{
 			
-			System.out.println("Ingrese la opcion a escoger : \n 1. Combustible \n 2. Billetes \n 3. Conversor de tiempo \n 4. Conversor de edad \n 5. Test 1 \n 6. Bhaskara formula \n 7. Intervalo");
+			System.out.println("Ingrese la opcion a escoger : \n 1. Combustible \n 2. Billetes \n 3. Conversor de tiempo \n 4. Conversor de edad \n 5. Test 1 \n 6. Bhaskara formula \n 7. Intervalo \n 8. Calcular notas \n 9. Coordenadas \n 10. Ordenador de numeros ");
 			int opcion = Integer.parseInt(br.readLine());
 			switch(opcion)
 			{
@@ -107,7 +107,8 @@ public class CLASES {
 					}	
 				}
 				case 7 :
-				{
+				{ 
+					//INTERVALO DE NUMEROS
 					System.out.println("Ingrese el numero correspondiente");
 					float rang = Float.parseFloat(br.readLine());
 					if(0.0 <= rang && rang<=25.0 )
@@ -116,7 +117,6 @@ public class CLASES {
 					}
 					else
 					{
-						//INTERVALO DE NUMEROS
 						if(25.0 < rang && rang<=50.0 )
 						{
 							System.out.println("Intervalo (25,50)");
@@ -143,6 +143,162 @@ public class CLASES {
 					}
 				}
 				case 8 :
+				{
+					//NOTAS DE ALUMNOS
+					System.out.println("Ingrese sus notas ");
+					
+					String [] parts1 = br.readLine().split(" ");
+					float A = Float.parseFloat(parts1[0]);
+					float B = Float.parseFloat(parts1[1]);
+					float C = Float.parseFloat(parts1[2]);
+					float D = Float.parseFloat(parts1[3]);
+					
+					float Media = (float) ((float) (A*0.2)+(B*0.3)+(C*0.4)+(D*0.1)); 
+					if(Media >= 7.0 ) 
+					{
+						System.out.println("Media: " + Media + "\n" + "Aluno aprovado."  );
+					}
+					if(5.0<=Media && Media<=6.9)
+					{
+						System.out.println("Ingrese la nota de sus examen");
+						float examen = Float.parseFloat(br.readLine());
+						float condicion = (Media+examen)/2 ;
+						if(condicion>=5.0)
+						{	
+							System.out.println("Media: " + Media + "\n" + "Aluno em exame.\n" + "Nota do exame: " + examen + "\nAluno aprovado. \n" + "Media final: " + condicion );
+						}
+						else
+						{
+							System.out.println("Media: " + Media + "\n" + "Aluno em exame." + "Nota do exame: " + examen + "\nAluno reprovado. \n" + "Media final: " + condicion );
+						}	
+					}
+					if(Media<5.0)
+					{
+						System.out.println("Media: " + Media + "\n" + "Aluno reprovado."  );
+					}
+				}
+				case 9 :
+				{
+					//COORDENADAS CARTESIANAS
+					System.out.println("Ingrese las coordenasdas en orden X Y "); 
+					String [] parts1 = br.readLine().split(" ");
+					float X = Float.parseFloat(parts1[0]);
+					float Y = Float.parseFloat(parts1[1]);
+					if(X==0.0 && Y==0.0)
+					{
+						System.out.println("Origem");
+					}
+					if(X==0 && Y!=0)
+					{
+						System.out.println("Eixo X");
+					}
+					if(Y==0 && X!=0)
+					{
+						System.out.println("Eixo Y");
+					}
+					if(0>X && 0>Y)
+					{
+						System.out.println("Q3");
+					}
+					if(0<X && 0<Y)
+					{
+						System.out.println("Q1");
+					}
+					if(0>X && 0<Y)
+					{
+						System.out.println("Q2");
+					}
+					if(0<X && 0>Y)
+					{
+						System.out.println("Q4");
+					}
+				}
+				case 10 :
+				{
+					//NUMEROS ORDENADOS
+					String [] parts1 = br.readLine().split(" ");
+					int num1 = Integer.parseInt(parts1[0]);
+					int num2 = Integer.parseInt(parts1[1]);
+					int num3 = Integer.parseInt(parts1[2]);
+					int numayor = 0;
+					int numedio = 0;
+					int numenor = 0;
+					if(num1 > num2)
+					{
+						if(num1>num3)
+						{
+							numayor = num1 ; 
+							if(num2>num3)
+							{
+								numedio = num2 ;
+								numenor = num3 ;
+							}
+							else
+							{
+								numedio = num3 ;
+								numenor = num2 ;
+										
+							}
+						}
+						else
+						{
+							numayor = num3 ;
+							numedio = num1 ; 
+							numenor = num2 ;
+						}		
+										
+					}
+					else
+					{
+						if(num2>num3)
+						{
+							numayor = num2 ; 
+							if(num3>num1)
+							{
+								numedio = num3 ;
+								numenor = num1 ; 
+							}
+							else
+							{
+								numedio = num1 ;
+								numenor = num3 ;
+							}
+						}
+					}
+					System.out.println(numenor + "\n" + numedio + "\n" + numayor + "\n" + num1 + "\n" + num2 + "\n" + num3);
+				}
+				case 11 :
+				{
+					String [] parts1 = br.readLine().split(" ") ;
+						Float A = Float.parseFloat(parts1[0]);
+						Float B = Float.parseFloat(parts1[1]);
+						Float C = Float.parseFloat(parts1[2]);
+					if((A+B)>C && (B+C)>A && (A+C)>B)
+					{
+						float perimetro = A+B+C ;
+						System.out.println("Perimetro = " + perimetro);		
+					}
+					else
+					{
+						float area = C *((A+B)/2);
+						System.out.println("Area = " + area);	
+					}
+				}
+				case 12 : 
+				{
+					String [] parts1 = br.readLine().split(" ");
+						int A = Integer.parseInt(parts1 [0]);
+						int B = Integer.parseInt(parts1 [1]);
+					if(A % B ==0 || ( B % A == 0 ))
+					{
+						System.out.println("Sao Multiplos\n");
+					}
+					else
+					{
+						System.out.println("Nao Sao Multiplos\n");
+					}
+				}
+				
 			}
 			
 		}
